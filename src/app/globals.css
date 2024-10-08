@@ -23,7 +23,7 @@ body[data-scroll-locked]{
 @media (max-width: 640px) {
   body[data-scroll-locked] {
     padding: 0 !important;
-    padding-top: 24px !important;
+    padding-top: 8px !important;
   }
 }
 

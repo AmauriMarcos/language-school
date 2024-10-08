@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-col">
 
-      <div className="px-6  w-full flex justify-between items-center border-b border-solid border-[#e7e7e7] pb-6">
+      <div className="px-6  w-full flex justify-between items-center border-b border-solid border-[#e7e7e7] pb-2  md:pb-6">
         <div className="w-[130px] md:w-[200px] h-auto">
           <Image
             className=""

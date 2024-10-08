@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={`${montserrat.variable} antialiased px-0 sm:px-[24px] py-[24px] 2xl:px-[208px]`}>
+      <body className={`${montserrat.variable} antialiased px-0  sm:px-[24px]  2xl:px-[208px] py-[8px] md:py-[24px]`}>
         <link rel="icon" href="/icon.ico" sizes="any" />
         <Navbar/>
         {children}
