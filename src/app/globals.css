@@ -4,8 +4,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
   }
 }
 
@@ -35,7 +35,7 @@ body[data-scroll-locked]{
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 100%;  
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -62,8 +62,8 @@ body[data-scroll-locked]{
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 240 10% 3.9%; 
+    --foreground: 0 0% 98%; 
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
