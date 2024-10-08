@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="w-[130px] md:w-[200px] h-auto">
           <Image
             className=""
-            src="/assets/daliakarla.png"
+            src="/assets/dalia_karla.png"
             width={170}
             height={170}
             alt="logo"

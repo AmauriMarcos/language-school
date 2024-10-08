@@ -55,9 +55,8 @@ const config: Config = {
   			'2xl': '1680px'
   		},
   		backgroundImage: {
-  		/* 	hero: 'url("/assets/hero_home.jpg")' */	
-      hero: 'url("/assets/hero_home.jpg")'
-      
+        hero: 'url("/assets/hero_home.jpg")',
+        logo: 'url("/assets/daliaKarla.png")'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
