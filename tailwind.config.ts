@@ -56,7 +56,8 @@ const config: Config = {
   		},
   		backgroundImage: {
         hero: 'url("/assets/hero_home.jpg")',
-        logo: 'url("/assets/daliaKarla.png")'
+        logo: 'url("/assets/daliaKarla.png")',
+		heroMobile: 'url("/assets/london5.jpg")'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
