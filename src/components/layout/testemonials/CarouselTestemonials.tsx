@@ -33,7 +33,7 @@ const CarouselTestemonials = () => {
         className="w-full self-end"
       >
         <p className='text-white text-[1.5rem] italic text-right leading-[2] w-[100%] min-h-[288px] md:min-h-[0]'>
-          "{testemonialsData[currentIndex].testemonial}"
+          {`"${testemonialsData[currentIndex].testemonial}"`}
         </p>
         
         <div className='mb-6 w-full flex justify-end mt-0 md:mt-4'>

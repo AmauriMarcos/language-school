@@ -19,13 +19,13 @@ const AboutSchool = () => {
           Dalia Language School
         </h1>
         <p className="leading-[2] font-[400] mt-8 md:mt-4 mb-8">
-          Founded in 2021, Dalia Language School is dedicated to helping
+        {`   Founded in 2021, Dalia Language School is dedicated to helping
           students learn English, French, and Arabic in a fun and supportive
           environment. Our passionate teachers use engaging methods to make
           language learning exciting and approachable for everyone. Whether
           you're a complete beginner or looking to perfect your skills, Dalia is
           here to guide you every step of the way. Join us and discover the joy
-          of learning a new language!
+          of learning a new language!`}
         </p>
 
         <div className="mt-[3rem] md:mt-[4.5rem]">
