@@ -5,7 +5,8 @@ import useMediaQuery from "@/utils/useMediaQuery";
 
 const Hero = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
-  const baseText = "Unlock the World.";
+  const baseText = "Unlock ";
+  const baseTextSubtitle = "the World.";
   const sentences = [
     "Become fluent in English",
     "Connect beyond borders",
@@ -55,17 +56,23 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black md:bg-transparent opacity-30 md:opacity-0"></div>
       <div className="relative z-10 h-full pl-5 md:pl-40 flex flex-col gap-4 md:gap-8 items-start justify-center">
         <div className="h-[250px] md:h-auto flex flex-col leading-[1.1] md:leading-[1.3]">
-          <h2 className="text-[3.5rem] mb-8 md:mb-0 md:text-[3.8rem] text-white font-bold">
-            {baseText}
-          </h2>
-          <h2 className="text-[2rem] md:text-[3.5rem] mb-14 md:mb-0 text-white font-normal">
+          <div className="flex flex-col md:flex-row ">
+            <h2 className="text-[3.3rem] mb-8 md:mb-0 md:text-[3.8rem] text-white font-bold">
+              {baseText}
+            </h2>
+            <h2 className="translate-y-[-1.5rem] md:translate-y-0  md:ml-6 text-[3.3rem] mb-8 md:mb-0 md:text-[3.8rem] text-white font-bold">
+              {baseTextSubtitle}
+            </h2>
+          </div>
+
+          <h2 className="text-[2rem] md:text-[3.5rem] mb-14 md:mb-0 text-white font-normal mr-4 md:mr-0">
             <span>
               {displayedText}
               <span className="animate-blink font-thin">|</span>
             </span>
           </h2>
         </div>
-        <div className="flex gap-6 md:mt-6">
+        <div className="flex gap-6 mt-10 md:mt-6">
           <Button
             size={isMobile ? "sm" : "lg"}
             variant="default"
@@ -73,11 +80,7 @@ const Hero = () => {
           >
             Apply today
           </Button>
-          <Button
-            size={isMobile ? "sm" : "lg"}
-            variant="outline"
-            color="#fff"
-          >
+          <Button size={isMobile ? "sm" : "lg"} variant="outline" color="#fff">
             Get Quote
           </Button>
         </div>
