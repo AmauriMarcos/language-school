@@ -52,7 +52,7 @@ const config: Config = {
   			}
   		},
   		screens: {
-  			'2xl': '1680px'
+  			'2xl': '1920px'
   		},
   		backgroundImage: {
         hero: 'url("/assets/hero_home.jpg")',
