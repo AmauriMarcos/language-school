@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { motion, MotionProps } from 'framer-motion';
 
 // Helper function to convert hex color to RGBA
 const hexToRGBA = (hex: string, alpha: number) => {
@@ -19,14 +18,34 @@ const hexToRGBA = (hex: string, alpha: number) => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-// Define Size type
-type Size = 'sm' | 'md' | 'lg';
+// Helper function to shade color
+function shadeColor(color: string, percent: number): string {
+  let num = parseInt(color.slice(1), 16),
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    G = ((num >> 8) & 0x00ff) + amt,
+    B = (num & 0x0000ff) + amt;
+  return (
+    '#' +
+    (
+      0x1000000 +
+      (R < 255 ? (R < 0 ? 0 : R) : 255) * 0x10000 +
+      (G < 255 ? (G < 0 ? 0 : G) : 255) * 0x100 +
+      (B < 255 ? (B < 0 ? 0 : B) : 255)
+    )
+      .toString(16)
+      .slice(1)
+  );
+}
 
-interface ButtonProps extends MotionProps {
+// Define Size type
+type Size = 'sm' | 'md' | 'lg' | 'xl';
+
+interface ButtonProps {
   children: React.ReactNode;
   variant?: 'default' | 'outline';
   color?: string;
-  size?: Size; // Use Size type here
+  size?: Size;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -35,130 +54,100 @@ const Button: React.FC<ButtonProps> = ({
   color = '#ff1f1f',
   size = 'lg',
   ...rest
-}: ButtonProps) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-
-  // Normalize the defaultColor for comparison
-  const defaultColor = color;
-  const normalizedDefaultColor = defaultColor.toLowerCase();
+}) => {
+  // Normalize the color
+  const defaultColor = color.toLowerCase();
 
   // Text colors
-  const textColorInitial = variant === 'default' ? '#ffffff' : defaultColor;
-  let textColorHover;
+  let textColor: string;
+  let textColorHover: string;
 
   if (variant === 'default') {
-    // For default button, text color changes to white on hover
+    // Default variant
+    textColor = '#ffffff';
     textColorHover = '#ffffff';
   } else {
-    // For outline button
-    if (normalizedDefaultColor !== '#242424') {
-      textColorHover = '#003c72';
-    } else {
+    // Outline variant
+    if (defaultColor === '#242424') {
+      textColor = '#000';
       textColorHover = '#ffffff';
+    } else {
+      textColor = '#fff';
+      textColorHover = '#000';
     }
+   // On hover, text color becomes white
   }
 
-  // Border colors using RGBA for smooth transition
-  const borderColorInitial =
+  // Border colors
+  const borderColor = variant === 'default' ? 'transparent' : defaultColor;
+
+  // Background colors
+  const backgroundColor =
+    variant === 'default' ? defaultColor : 'transparent';
+  const backgroundColorHover =
     variant === 'default'
-      ? 'rgba(255,255,255,0)' // Transparent border
-      : hexToRGBA(defaultColor, 1); // Solid border in defaultColor
-  const borderColorHover =
-    variant === 'default'
-      ? 'rgba(255,255,255,1)' // Solid white border
-      : hexToRGBA(defaultColor, 0); // Transparent border
-
-  // Border width
-  const borderWidth = 1;
-
-  // Overlay background color
-  const overlayBgColor = defaultColor; // Use defaultColor for both variants
-
-  // Overlay animation
-  const overlayVariants = {
-    initial: {
-      scale: variant === 'default' ? 1 : 0,
-    },
-    hover: {
-      scale: variant === 'default' ? 0 : 1,
-    },
-  };
+      ? shadeColor(defaultColor, -10) // Slightly darker version of the color (darken by 10%)
+      : defaultColor; // Fill with color on hover for outline variant
 
   // Size-based padding
   const paddingMap: { [key in Size]: string } = {
     sm: '.5rem 1rem',
     md: '.65rem 1.5rem',
     lg: '.785rem 1.75rem',
+    xl: '1.33rem 2rem',
+  };
+
+  const fontSizeMap: { [key in Size]: string } = {
+    sm: '.7rem',
+    md: '.8rem',
+    lg: '.9rem',
+    xl: '1.1rem',
+  };
+
+  // Size-based widths
+  const widthMap: { [key in Size]: string } = {
+    sm: 'auto',
+    md: 'auto',
+    lg: 'auto',
+    xl: '200px',
   };
 
   // Apply size-based padding
   const padding = paddingMap[size];
 
+  // Hover state
+  const [hover, setHover] = React.useState(false);
+
   const containerStyle = {
     position: 'relative' as const,
-    overflow: 'hidden' as const,
     cursor: 'pointer' as const,
     padding: padding,
     textTransform: 'uppercase' as const,
     borderRadius: '9999px',
-    fontSize: '.8rem',
+    fontSize: fontSizeMap[size],
     fontWeight: 600,
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     borderStyle: 'solid' as const,
-    backgroundColor: 'transparent',
-    boxSizing: 'border-box' as const, // Include border in dimensions
-  };
-
-  const textStyle = {
-    position: 'relative' as const,
-    zIndex: 2,
+    borderWidth: 1,
+    borderColor: borderColor,
+    width: widthMap[size],
+    backgroundColor: hover ? backgroundColorHover : backgroundColor,
+    color: hover ? textColorHover : textColor,
+    boxSizing: 'border-box' as const,
+    transition: 'background-color 0.3s ease, color 0.3s ease',
   };
 
   return (
-    <motion.div
+    <div
       style={containerStyle}
-      initial={{
-        borderWidth,
-        borderColor: borderColorInitial,
-      }}
-      animate={{
-        borderColor: isHovered ? borderColorHover : borderColorInitial,
-      }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       {...rest}
     >
-      {/* Overlay */}
-      <motion.div
-        style={{
-          backgroundColor: overlayBgColor,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          borderRadius: '9999px',
-          transformOrigin: 'center',
-          zIndex: 1,
-        }}
-        initial="initial"
-        animate={isHovered ? 'hover' : 'initial'}
-        variants={overlayVariants}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-      />
-      {/* Text */}
-      <motion.span
-        style={textStyle}
-        initial={{ color: textColorInitial }}
-        animate={{ color: isHovered ? textColorHover : textColorInitial }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-      >
-        {children}
-      </motion.span>
-    </motion.div>
+      <span>{children}</span>
+    </div>
   );
 };
 
