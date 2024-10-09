@@ -29,7 +29,7 @@ const AboutSchool = () => {
         </p>
 
         <div className="mt-[3rem] md:mt-[4.5rem]">
-          <Button variant="default" color="#ff1f1f" size={isMobile ? "lg" : "xl"}>
+          <Button variant="default" color="#ff1f1f" size={isMobile ? "md" : "xl"}>
             Apply
           </Button>
         </div>

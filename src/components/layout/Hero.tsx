@@ -54,11 +54,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-heroMobile md:bg-hero bg-cover bg-no-repeat bg-center"></div>
       <div className="absolute inset-0 bg-black md:bg-transparent opacity-30 md:opacity-0"></div>
       <div className="relative z-10 h-full pl-5 md:pl-40 flex flex-col gap-4 md:gap-8 items-start justify-center">
-        <div className="flex flex-col leading-[1.5] md:leading-[1.3]">
-          <h2 className="text-[2rem] md:text-[3.8rem] text-white font-bold">
+        <div className="h-[250px] md:h-auto flex flex-col leading-[1.1] md:leading-[1.3]">
+          <h2 className="text-[3.5rem] mb-8 md:mb-0 md:text-[3.8rem] text-white font-bold">
             {baseText}
           </h2>
-          <h2 className="text-[1.7rem] md:text-[3.5rem] text-white font-normal">
+          <h2 className="text-[2rem] md:text-[3.5rem] mb-14 md:mb-0 text-white font-normal">
             <span>
               {displayedText}
               <span className="animate-blink font-thin">|</span>
