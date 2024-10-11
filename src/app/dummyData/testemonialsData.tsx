@@ -19,7 +19,7 @@ export const testemonialsData: testemonialsDataItem[] = [
         image: '/assets/testimonial2.png',
         name: 'Sofia Ramirez',
         occupation: 'Freelance Writer',
-        testemonial: 'I never thought learning Arabic could be this much fun. Dalia Language School makes every lesson enjoyable and interactive!',
+        testemonial: 'I never thought learning Spanish could be this much fun. Dalia Language School makes every lesson enjoyable and interactive!',
     },
     {
         id: 3,

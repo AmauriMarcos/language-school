@@ -33,6 +33,10 @@ body[data-scroll-locked]{
   }
 }
 
+p, li, a {
+  font-family: var(--font-roboto);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;  

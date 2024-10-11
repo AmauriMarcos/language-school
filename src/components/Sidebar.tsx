@@ -87,17 +87,17 @@ export function Sidebar() {
 
           <div className="flex flex-col w-full justify-between pt-4 items-center mb-2 mt-6">
             <ul className="flex flex-col gap-4 items-center">
-              <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+              <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
                 <a className="hover:text-[#FF3A3A]" href="#">
                   Home
                 </a>
               </li>
-              <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+              <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
                 <a className="hover:text-[#FF3A3A]" href="#">
                   About
                 </a>
               </li>
-              <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+              <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
                 <a className="hover:text-[#FF3A3A]" href="#">
                   Courses
                 </a>

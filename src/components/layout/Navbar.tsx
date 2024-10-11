@@ -62,7 +62,7 @@ const Navbar = () => {
                 {icon}
                 <div className="flex flex-col">
                   <h6 className="text-[.75rem] uppercase font-bold text-[#FF3A3A]">{title}</h6>
-                  <p className="text-[.8rem] font-normal">{text}</p>
+                  <p className="text-[.8rem] font-[300]">{text}</p>
                 </div>
               </div>
             );
@@ -77,22 +77,22 @@ const Navbar = () => {
 
 
       <div
-        className={`hidden md:flex w-full justify-between pt-4 items-center mb-2 ${
-          isScrolled ? 'md:fixed md:top-0 md:left-0 md:bg-white md:z-50 md:pt-4 md:mb-0 px-0  sm:px-[24px]  2xl:px-[208px] py-[8px] ' : ''
+        className={`hidden md:flex w-full justify-between pt-4 items-center mb-2  ${
+          isScrolled ? 'md:fixed md:top-0 md:left-0 md:bg-white md:z-50 md:pt-4 md:shadow-md md:mb-0 px-0  sm:px-[24px]  2xl:px-[208px] py-[8px] ' : ''
         }`}
       >
         <ul className="flex gap-10">
-          <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+          <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
             <a className="hover:text-[#FF3A3A]" href="#">
               Home
             </a>
           </li>
-          <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+          <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
             <a className="hover:text-[#FF3A3A]" href="#">
               About
             </a>
           </li>
-          <li className="text-[.85rem] uppercase font-semibold text-[#242424]">
+          <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
             <a className="hover:text-[#FF3A3A]" href="#">
               Courses
             </a>

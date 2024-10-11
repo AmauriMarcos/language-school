@@ -16,7 +16,7 @@ const DescriptionBlock: React.FC<DescriptionBlockProps> = ({ icon, title, text})
       <h4 className='text-[#242424] uppercase font-semibold'>
         {title}
       </h4>
-      <p className='font-[400] text-center md:text-left'>
+      <p className='font-[300] leading-[1.7] text-center md:text-left '>
         {text}
       </p>
     </div>

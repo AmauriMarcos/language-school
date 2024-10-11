@@ -1,16 +1,14 @@
 "use client";
-import Button from "@/components/ui/Button";
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import useMediaQuery from "@/utils/useMediaQuery";
+import BlobButton from "@/components/ui/BlobButton";
 
 const AboutSchool = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
   const bubbleRef = useRef(null);
   const isInView = useInView(bubbleRef, { once: false });
-
-  console.log(isMobile )
 
   return (
     <div className="flex flex-col gap-4 pr-[2rem]  justify-center  items-start w-full relative min-h-screen md:min-h-[0]">
@@ -18,9 +16,9 @@ const AboutSchool = () => {
         <h1 className="text-[3rem] w-[300px] md:w-auto md:text-[3.5rem] text-[#191919] font-extrabold leading-[1.2]">
           Dalia Language School
         </h1>
-        <p className="leading-[2] font-[400] mt-8 md:mt-4 mb-8">
-        {`   Founded in 2021, Dalia Language School is dedicated to helping
-          students learn English, French, and Arabic in a fun and supportive
+        <p className="font-[300] leading-[2]  mt-8 md:mt-4 mb-8">
+          {`   Founded in 2021, Dalia Language School is dedicated to helping
+          students learn English, French, and Spanish in a fun and supportive
           environment. Our passionate teachers use engaging methods to make
           language learning exciting and approachable for everyone. Whether
           you're a complete beginner or looking to perfect your skills, Dalia is
@@ -29,9 +27,10 @@ const AboutSchool = () => {
         </p>
 
         <div className="mt-[3rem] md:mt-[4.5rem]">
-          <Button variant="default" color="#ff1f1f" size={isMobile ? "md" : "xl"}>
+          <BlobButton variant="default" color="#ff1f1f" size={isMobile ? "md" : "xl"}>
             Apply
-          </Button>
+          </BlobButton>
+
         </div>
       </div>
 

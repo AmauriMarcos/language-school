@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Button from "../ui/Button";
 import useMediaQuery from "@/utils/useMediaQuery";
+import BlobButton from "../ui/BlobButton";
 
 const Hero = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
@@ -10,7 +10,7 @@ const Hero = () => {
   const sentences = [
     "Become fluent in English",
     "Connect beyond borders",
-    "Explore the richness of Arabic",
+    "Explore the richness of Spanish",
     "Speak like a native",
     "Discover new cultures",
     "Become fluent in French",
@@ -73,16 +73,21 @@ const Hero = () => {
           </h2>
         </div>
         <div className="flex gap-6 mt-10 md:mt-6">
-          <Button
+          <BlobButton
             size={isMobile ? "sm" : "lg"}
             variant="default"
             color="#ff1f1f"
           >
-            Apply today
-          </Button>
-          <Button size={isMobile ? "sm" : "lg"} variant="outline" color="#fff">
-            Get Quote
-          </Button>
+              Apply today
+          </BlobButton>
+
+          <BlobButton
+            size={isMobile ? "sm" : "lg"}
+            variant="outline"
+            color="#fff"
+          >
+              Get Quote
+          </BlobButton>
         </div>
       </div>
     </div>

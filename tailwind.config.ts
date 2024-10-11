@@ -58,6 +58,7 @@ const config: Config = {
         hero: 'url("/assets/hero_home.jpg")',
         logo: 'url("/assets/daliaKarla.png")',
         heroMobile: 'url("/assets/london5.jpg")',
+        bgSky:'url("/assets/sky.jpg")'
       },
       borderRadius: {
         lg: "var(--radius)",

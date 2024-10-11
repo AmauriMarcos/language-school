@@ -1,0 +1,126 @@
+/* BlobButton.css */
+
+/* Blob Button */
+.blob-btn {
+    /* Define CSS Variables with default values */
+    --button-color: #ffffff; /* Default text color */
+    --button-hover-color: #ffffff; /* Default hover text color */
+    --border-color: transparent; /* Default border color */
+    --inner-background-color: #ff1e1f; /* Default background color */
+    --blob-color: #ffffff; /* Default blob color */
+    --button-width: auto; /* Default button width */
+  
+    position: relative;
+    z-index: 1;
+    padding: 0.55rem 2.3rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--button-color);
+    transition: color 0.5s, background-color 0.3s ease;
+    border-radius: 30px;
+    width: var(--button-width);
+    text-transform: uppercase;
+  }
+  
+  /* Pseudo-elements for border animations */
+  .blob-btn::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+  }
+  
+  .blob-btn::after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+  }
+  
+  /* Hover Effects */
+  .blob-btn:hover {
+    color: var(--button-hover-color);
+  }
+  
+  .blob-btn:hover::after {
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+  }
+  
+  /* Blobs and Inner Structure */
+  .blob-btn__inner {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--inner-background-color);
+    border-radius: 30px;
+  }
+  
+  .blob-btn__blobs {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: block;
+    filter: url('#goo'); /* Apply gooey filter here */
+  }
+  
+  .blob-btn__blob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    background: var(--blob-color);
+    border-radius: 50%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+  }
+  
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+  
+  .blob-btn__blob:nth-child(2) {
+    left: 25%;
+    transition-delay: 0.08s;
+  }
+  
+  .blob-btn__blob:nth-child(3) {
+    left: 50%;
+    transition-delay: 0.16s;
+  }
+  
+  .blob-btn__blob:nth-child(4) {
+    left: 75%;
+    transition-delay: 0.24s;
+  }
+  
+  /* Blob movement on hover */
+  .blob-btn:hover .blob-btn__blob {
+    transform: translate3d(0, 0, 0) scale(1.7);
+  }
+  
+  /* Gooey Filter */
+  .gooey-filter {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  
