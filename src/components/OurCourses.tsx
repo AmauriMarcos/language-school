@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import CourseCard from './CourseCard'
 import { coursesData } from '@/app/dummyData/coursesData'
 import { motion, useAnimation } from 'framer-motion'

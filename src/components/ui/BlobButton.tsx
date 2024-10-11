@@ -69,10 +69,7 @@ const BlobButton: React.FC<ButtonProps> = ({
 
   // Determine background colors
   const backgroundColor = variant === 'default' ? defaultColor : 'transparent';
-  const backgroundColorHover =
-    variant === 'default'
-      ? shadeColor(defaultColor, -10) // Darken by 10%
-      : defaultColor;
+
 
   // Determine blob color
   const blobColor = variant === 'default' ?  color === 'white' || color === '#fff' || color === '#ffffff' ? '#ff1f1f' : '#ffffff' : defaultColor;
