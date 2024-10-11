@@ -51,7 +51,7 @@ const PriceCards = () => {
     <div className="flex flex-col md:flex-row  items-center justify-center relative gap-4" ref={ref}>
       {/* Basic Plan Card */}
       <motion.div
-        className="flex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
+        className="border border-solid border-[#FF1E1F] md:border-none flex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
         variants={cardVariants}
         initial="hidden"
         animate={controls}
@@ -68,7 +68,7 @@ const PriceCards = () => {
             color="#FF1E1F"
             size="lg"
         >
-            Blob 
+            Get Started
         </BlobButton>
         {/*   <button className="w-[90%] mx-auto bg-[#ff1e1f] py-[.65rem] hover:bg-[#c92525] rounded-full text-white text-sm">
             Enroll Now
@@ -106,7 +106,7 @@ const PriceCards = () => {
             color="#fff"
             size="lg"
         >
-            Enroll Now 
+            Get Started
         </BlobButton>
         </div>
         <div className="flex flex-col gap-6 mt-6">
@@ -123,7 +123,7 @@ const PriceCards = () => {
 
       {/* Premium Plan */}
       <motion.div
-        className="flex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
+        className="border border-solid border-[#FF1E1F] md:border-none flex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
         variants={cardVariants}
         initial="hidden"
         animate={controls}
@@ -139,7 +139,7 @@ const PriceCards = () => {
             color="#FF1E1F"
             size="lg"
         >
-            Blob 
+            Get Started
         </BlobButton>
         </div>
         <div className="flex flex-col gap-6 mt-6">
@@ -155,7 +155,7 @@ const PriceCards = () => {
       </motion.div>
         {/* Premium Plan */}
         <motion.div
-        className="flex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
+        className=" border border-solid border-[#FF1E1F] md:border-noneflex flex-col gap-8 bg-white p-8 items-center h-[570px] rounded-2xl w-[320px] z-10"
         variants={cardVariants}
         initial="hidden"
         animate={controls}
@@ -171,7 +171,7 @@ const PriceCards = () => {
             color="#FF1E1F"
             size="lg"
         >
-            Blob 
+           Get Started
         </BlobButton>
         </div>
         <div className="flex flex-col gap-6 mt-6">
