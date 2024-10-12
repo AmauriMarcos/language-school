@@ -37,7 +37,7 @@ const OurCourses = () => {
   }
 
   return (
-    <div className='relative gap-10 flex flex-col w-[80%] m-auto mt-12'>
+    <div className='relative gap-10 flex flex-col w-[93%] md:w-[80%]  m-auto mt-12 mb-8 md:mb-0 '>
       <h2 className='text-[#181818] text-[2.3rem] md:text-[3.15rem] font-extrabold z-20 mt-14'>
         Our Courses
       </h2>

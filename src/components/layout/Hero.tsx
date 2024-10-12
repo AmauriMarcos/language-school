@@ -10,7 +10,7 @@ const Hero = () => {
   const sentences = [
     "Become fluent in English",
     "Connect beyond borders",
-    "Explore the richness of Spanish",
+    "Become fluent in Spanish",
     "Speak like a native",
     "Discover new cultures",
     "Become fluent in French",
