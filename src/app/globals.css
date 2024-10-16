@@ -14,8 +14,8 @@ body {
 }
 
 body[data-scroll-locked]{
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  padding-left: 208px !important;
+  padding-right: 208px !important;
   padding-top: 24px !important;
   padding-bottom: 24px !important;
 }

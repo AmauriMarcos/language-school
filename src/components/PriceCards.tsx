@@ -37,7 +37,7 @@ const PriceCards = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true, // Animation triggers only once
-    threshold: 0.2, // Trigger when 20% of the component is in view
+    threshold: 0.1, // Trigger when 20% of the component is in view
   });
 
   useEffect(() => {
