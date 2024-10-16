@@ -17,7 +17,7 @@ import BlobButton from './ui/BlobButton';
 
 const Contact = () => {
     return (
-        <div className='flex md:flex-row flex-col md:mt-0 mt-10 md:gap-0 gap-10 md:absolute md:bottom-[-10rem] bg-white mb-12 shadow-lg  md:p-0 h-auto md:h-[221px] items-center'>
+        <div className='flex flex-col md:flex-row  md:mt-0 mt-10 md:gap-0 gap-10 md:absolute md:bottom-[-10rem] bg-white mb-12 shadow-lg  md:p-0 h-auto md:h-[221px] items-center'>
             <div className='md:w-[400px] md:px-[60px] flex flex-col gap-2 md:p-0 p-4'>
                 <h6 className='uppercase text-[#FF1E1F] font-semibold text-[.9rem]'>Contact Us</h6>
                 <h3 className='text-[#181818] text-[2rem] md:text-[2rem] font-extrabold z-20 '>Find Your Course</h3>

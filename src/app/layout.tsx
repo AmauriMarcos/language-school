@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat, Roboto } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.ico" sizes="any" />
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

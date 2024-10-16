@@ -14,6 +14,9 @@ import { BsClock as ClockIcon } from "react-icons/bs";
 import { AiOutlinePhone as PhoneIcon } from "react-icons/ai";
 import { IoLocationOutline as LocationIcon } from "react-icons/io5";
 import { FaInstagram as InstaIcon } from "react-icons/fa";
+import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
+import { FaYoutube as YoutubeIcon } from "react-icons/fa6";
+import { FaFacebookF as FaceIcon } from "react-icons/fa";
 
 type InfoNavItem = {
   id: number;
@@ -26,19 +29,19 @@ export function Sidebar() {
   const infoNav: InfoNavItem[] = [
     {
       id: 1,
-      icon: <ClockIcon size={34} color="#FF3A3A" />,
+      icon: <ClockIcon size={26} color="#FF3A3A" />,
       title: "Hours",
       text: "Mon-Fri 8AM - 5PM",
     },
     {
       id: 2,
-      icon: <PhoneIcon size={34} color="#FF3A3A" />,
+      icon: <PhoneIcon size={26} color="#FF3A3A" />,
       title: "Call",
       text: "+2342 554 34",
     },
     {
       id: 3,
-      icon: <LocationIcon size={34} color="#FF3A3A" />,
+      icon: <LocationIcon size={26} color="#FF3A3A" />,
       title: "Address",
       text: "Greenpoint, Broolklyn",
     },
@@ -65,7 +68,7 @@ export function Sidebar() {
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
-        <div className="my-10">
+        <div className="my-8">
           <div className="flex flex-col items-center gap-4 border-b border-solid border-[#e7e7e7] pb-6 ">
             {infoNav.map(({ id, icon, title, text }) => {
               return (
@@ -99,11 +102,24 @@ export function Sidebar() {
               </li>
               <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
                 <a className="hover:text-[#FF3A3A]" href="#">
+                  Contact
+                </a>
+              </li>
+              <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
+                <a className="hover:text-[#FF3A3A]" href="#">
+                  Pricing
+                </a>
+              </li>
+              <li className="text-[.85rem] uppercase font-[400] text-[#242424]">
+                <a className="hover:text-[#FF3A3A]" href="#">
                   Courses
                 </a>
               </li>
             </ul>
-            <div className="mt-10 cursor-pointer">
+            <div className="mt-10 cursor-pointer flex gap-2">
+              <TwitterIcon color="#242424" size={16} />
+              <FaceIcon color="#242424" size={16} />
+              <YoutubeIcon color="#242424" size={16} />
               <InstaIcon color="#242424" size={18} />
             </div>
           </div>
