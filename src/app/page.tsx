@@ -13,11 +13,11 @@ export default function Home() {
   return (
 
     <div className="">
-      <Hero/>
+      <Hero />
       <div className=" w-full md:w-[80%] gap-10 m-auto flex flex-col  items-center md:flex-row my-4 md:my-10  p-8 ">
-        {descriptionData.map(({id, icon, title, text}) => {
-          return(
-            <DescriptionBlock 
+        {descriptionData.map(({ id, icon, title, text }) => {
+          return (
+            <DescriptionBlock
               key={id}
               id={id}
               icon={icon}
@@ -27,13 +27,24 @@ export default function Home() {
           )
         })}
       </div>
-      <Testemonials/>
-      <OurCourses/>
-      <Prices/>
+      <section id="testemonials">
+        <Testemonials />
+      </section>
+      <section id="our-courses">
+        <OurCourses />
+      </section>
+      <section id="prices">
+        <Prices />
+      </section>
+      <section>
       <div className="md:mt-44">
-        <Carousel/>
+        <Carousel />
       </div>
-      <SpecialOffer/>
+      </section>
+
+      <section id="special-offer">
+        <SpecialOffer />
+      </section>
       <div className="mt-52">
       </div>
     </div>
