@@ -20,6 +20,15 @@ body[data-scroll-locked]{
   padding-bottom: 24px !important;
 }
 
+@media (max-width: 1919px) {
+  body[data-scroll-locked] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+}
+
 @media (max-width: 640px) {
   body[data-scroll-locked] {
     padding: 0 !important;
